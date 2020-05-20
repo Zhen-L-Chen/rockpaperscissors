@@ -1,4 +1,5 @@
-let count = 0;
+let compCount = 0;
+let yourCount = 0;
 
 function rockInput(){
     //input for rock
@@ -27,23 +28,30 @@ function compSelection(){
 function computerPlay(userSelection, compSelection){
     if (userSelection === "rock" && compSelection === "scissors"){
         document.getElementById("updatePrompt").innerHTML = "you win";
+        yourCount += 1;
     }else if (userSelection === "paper" && compSelection === "rock"){
         document.getElementById("updatePrompt").innerHTML = "you win";
+        yourCount += 1;
     }else if (userSelection === "scissors" && compSelection === "paper"){
         document.getElementById("updatePrompt").innerHTML = "you win";
+        yourCount += 1;
     }else if (userSelection === compSelection){
         document.getElementById("updatePrompt").innerHTML = "it's a draw";
     }else{
         document.getElementById("updatePrompt").innerHTML = "you lose";
+        compCount -=1;
     }
+}
+
+function score(){
+
 }
 
 
 function game(userInput){
     let comp = compSelection();
     computerPlay(userInput, comp);
-    count += 1;
-    document.getElementById("updateYourScore").innerHTML = count;
+    document.getElementById("updateYourScore").innerHTML = compCount;
 }
 
 
