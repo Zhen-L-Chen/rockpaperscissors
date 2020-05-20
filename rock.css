@@ -19,12 +19,12 @@
     margin-right: 300px;
 }
 
-.updateCompScore {
+#updateCompScore {
     float: left;
 }
 
-.updateYourScore {
-    float: right;
+#updateYourScore {
+    float: middle;
 }
 
 .prompt{
@@ -44,3 +44,6 @@ body {
     background-position: center;
 }
 
+#updatePrompt{
+    color: #ffffff;
+}
