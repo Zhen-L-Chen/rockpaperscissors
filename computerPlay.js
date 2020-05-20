@@ -1,3 +1,4 @@
+let matches = 0;
 let compCount = 0;
 let yourCount = 0;
 
@@ -26,43 +27,49 @@ function compSelection(){
 }
 
 function computerPlay(userSelection, compSelection){
-    if (userSelection === "rock" && compSelection === "scissors"){
+    if ((userSelection === "rock" && compSelection === "scissors")||(userSelection === "paper" && compSelection === "rock") || (userSelection === "scissors" && compSelection === "paper")){
+        yourCount +=1;
+        matches +=1;
+        document.getElementById("updateYourScore").innerHTML = yourCount;
         document.getElementById("updatePrompt").innerHTML = "you win";
-        yourCount += 1;
-    }else if (userSelection === "paper" && compSelection === "rock"){
-        document.getElementById("updatePrompt").innerHTML = "you win";
-        yourCount += 1;
-    }else if (userSelection === "scissors" && compSelection === "paper"){
-        document.getElementById("updatePrompt").innerHTML = "you win";
-        yourCount += 1;
     }else if (userSelection === compSelection){
+        matches +=1;
         document.getElementById("updatePrompt").innerHTML = "it's a draw";
     }else{
+        compCount +=1;
+        matches +=1;
+        document.getElementById("updateCompScore").innerHTML = compCount;
         document.getElementById("updatePrompt").innerHTML = "you lose";
-        compCount -=1;
     }
 }
 
-function score(){
-
+function checker(userInput){
+    if(matches < 5){
+        game(userInput)
+    }else{
+        if(compCount > yourCount){
+            document.getElementById("final").innerHTML = "sorry you lost";
+        }else{
+            document.getElementById("final").innerHTML = "congrats you won";
+        }
+    }
 }
-
 
 function game(userInput){
     let comp = compSelection();
     computerPlay(userInput, comp);
-    document.getElementById("updateYourScore").innerHTML = compCount;
 }
 
-
-document.getElementById("rock").addEventListener("click", ()=>{
-    game("rock")});
-
-document.getElementById("paper").addEventListener("click", ()=>{
-    game("paper")});
-
-document.getElementById("scissors").addEventListener("click", ()=>{
-    game("scissors")});   
-
+function totalGame(){
+    document.getElementById("rock").addEventListener("click", ()=>{
+        checker("rock")});      
+    document.getElementById("paper").addEventListener("click", ()=>{
+        checker("paper")});
+    document.getElementById("scissors").addEventListener("click", ()=>{
+        checker("scissors")}); 
+} 
 
     
+
+totalGame();
+
