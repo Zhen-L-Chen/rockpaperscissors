@@ -1,49 +1,45 @@
-.text {
+.text{
     color: #ffffff;
     text-align: center;
     position: static;
     margin-top: 250px;
 }
-
-.score {
-    margin-bottom: 150px;
-}
-
-.YScore {
-    float:left;
-    margin-left: 300px;
-}
-
-.CScore{
-    float:right;
-    margin-right: 300px;
-}
-
-#updateCompScore {
-    float: left;
-}
-
-#updateYourScore {
-    float: middle;
-}
-
 .prompt{
     text-align: center;
+    margin-top: 140px;
     margin-bottom: 75px;
 }
-
-.button {
+.button{
     text-align: center;
 }
-
-body {
+#score{
+    color: #ffffff;
+    width: 400px;
+    height: 100px;
+    text-align: center;
+    display: block;
+    margin-left: 420px;
+}
+.yourScore{
+    width: 200px;
+    height: 100px;
+    float: left;
+}
+.compScore{
+    width: 200px;
+    height: 100px;
+    float: left;
+}
+body{
     width: 100%;
     height: 100vh;
     background-image: url("casino.jpg");
     background-size: cover;
     background-position: center;
 }
-
 #updatePrompt{
+    color: #ffffff;
+}
+#final{
     color: #ffffff;
 }
